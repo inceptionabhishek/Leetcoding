@@ -1,30 +1,14 @@
 class Solution {
 public:
-    long long moduloMultiplication(long a,
-                            long b, long mod)
-    {
-         
-        // Initialize result
+    long long moduloMultiplication(long a,long b, long mod){
         long res = 0; 
- 
-        // Update a if it is more than
-        // or equal to mod
         a %= mod;
- 
-        while (b > 0)
-        {
-             
-            // If b is odd, add a with result
-            if ((b & 1) > 0)
-            {
+        while (b > 0){
+            if ((b & 1) > 0){
                 res = (res + a) % mod;
             }
- 
-            // Here we assume that doing 2*a
-            // doesn't cause overflow
             a = (2 * a) % mod;
- 
-            b >>= 1; // b = b / 2
+            b >>= 1;
         }
         return res;
     }
