@@ -17,12 +17,10 @@ public:
             }
         }
         for(int i=s.length()/2;i<s.length();i++){
-            cout << s[i] << ' ';
             if(chk(s[i])){
                 cnt2++;
             }
         }
-        cout << cnt1 << ' ' << cnt2 << endl;
         return cnt1==cnt2;
     }
 };
