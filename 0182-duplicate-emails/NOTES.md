@@ -1,1 +1,1 @@
-​
+Using WHERE It was giving error so, better change it to IN OR exists
