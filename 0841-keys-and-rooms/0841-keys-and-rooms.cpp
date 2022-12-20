@@ -17,12 +17,11 @@ public:
         for(int i=0;i<node.size();i++){
             dfs(vis,node[i],rooms);
         }
-        for(int i=0;i<vis.size();i++){
-            cout << vis[i] << ' ';
-        }
-        cout << endl;
+        // for(int i=0;i<vis.size();i++){
+        //     cout << vis[i] << ' ';
+        // }
+        // cout << endl;
         for(int i=0;i<vis.size()-1;i++){
-            
             if(vis[i]==false){
                 return false;
             }
