@@ -17,7 +17,6 @@ public:
         for(int i=1;i<=n;i++){
             if(vis[i]==0){
                 color[i]=1;
-                vis[i]=1;
                 q.push(i);
                 while(!q.empty()){
                     int fi=q.front();
@@ -34,14 +33,6 @@ public:
                 }
             }
         }
-        for(int i=0;i<vis.size();i++){
-            cout << vis[i] << ' ';
-        }
-        cout << endl;
-        for(int i=0;i<color.size();i++){
-            cout << color[i] << ' ';
-        }
-        cout << endl;
         return true;
     }
 };
