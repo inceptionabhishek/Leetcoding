@@ -1,18 +1,12 @@
 class Solution {
 public:
-    int minDeletionSize(vector<string>& strs) {
-        int n=strs.size();
-        int m=strs[0].size();
-        int cnt=0;
-        for(int i=0;i<m;i++){
-            vector<char>v;
-            for(int j=0;j<n;j++){
-                v.push_back(strs[j][i]);
-            }
-            if(!is_sorted(v.begin(),v.end())){
-                cnt++;
-            }
+    int minDeletionSize(vector<string>& A) {
+        int n=A.size(),m=A[0].size(),i,j,ans=0;
+        for(i=0;i<m;i++)
+        {
+            for(j=0;j+1<n;j++)if(A[j][i]>A[j+1][i])break;
+            if(j+1<n)ans++;
         }
-        return cnt;
+        return ans;
     }
 };
