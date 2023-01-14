@@ -2,9 +2,11 @@ class Solution {
 public:
     vector<int>adj[1001];
     bool vis[1001];
+    int maxy=30;
     vector<int>currComponent;
     void dfs(int node){
         currComponent.push_back(node);
+        maxy=min(maxy,node);
         vis[node]=true;
         for(auto j:adj[node]){
             if(!vis[j]){
@@ -19,19 +21,15 @@ public:
             adj[s2[i]-'a'].push_back(s1[i]-'a');
         }
         vector<vector<int>> v;
+        map<int,int> ms;
         for(int i=0;i<=25;i++){
             if(!vis[i]){
                 currComponent.clear();
+                maxy=30;
                 dfs(i);
-                v.push_back(currComponent);
-            }
-        }
-        map<int,int> ms;
-        for(auto j:v){
-            sort(j.begin(),j.end());
-            int mini=j[0];
-            for(auto i:j){
-                ms[i]=mini;
+                for(auto j:currComponent){
+                    ms[j]=maxy;
+                }
             }
         }
         for(int i=0;i<baseStr.length();i++){
