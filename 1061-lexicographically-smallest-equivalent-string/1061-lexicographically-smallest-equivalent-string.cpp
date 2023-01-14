@@ -26,12 +26,6 @@ public:
                 v.push_back(currComponent);
             }
         }
-        for(auto j:v){
-            for(auto i:j){
-                cout << i << ' ';
-            }
-            cout << endl;
-        }
         for(int i=0;i<baseStr.length();i++){
             int node=baseStr[i]-'a';
             for(auto j:v){
