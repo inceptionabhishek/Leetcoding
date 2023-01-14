@@ -26,19 +26,17 @@ public:
                 v.push_back(currComponent);
             }
         }
+        map<int,int> ms;
+        for(auto j:v){
+            sort(j.begin(),j.end());
+            int mini=j[0];
+            for(auto i:j){
+                ms[i]=mini;
+            }
+        }
         for(int i=0;i<baseStr.length();i++){
             int node=baseStr[i]-'a';
-            for(auto j:v){
-                auto it=find(j.begin(),j.end(),node);
-                
-                if(it!=j.end()){
-                    
-                    sort(j.begin(),j.end());
-                    int mininode=j[0];
-                    char Tochange='a'+mininode;
-                    baseStr[i]=Tochange;
-                }
-            }
+            baseStr[i]=ms[node]+'a';
         }
         return baseStr;
     }
