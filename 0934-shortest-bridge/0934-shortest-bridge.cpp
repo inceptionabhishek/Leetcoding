@@ -40,21 +40,14 @@ public:
         vector<pair<int,int>> island1,island2;
         for(int i=0;i<n;i++){
             for(int j=0;j<n;j++){
-                cout << grid[i][j] << ' ';
+                //cout << grid[i][j] << ' ';
                 if(grid[i][j]==3){
                     island1.push_back(make_pair(i,j));
                 }else if(grid[i][j]==4){
                     island2.push_back(make_pair(i,j));
                 }
             }
-            cout << endl;
-        }
-        for(auto j:island1){
-            cout << j.first << ' ' << j.second << endl;
-        }
-        
-        for(auto j:island2){
-            cout << j.first << ' ' << j.second << endl;
+            //cout << endl;
         }
         for(auto j:island1){
             for(auto k:island2){
