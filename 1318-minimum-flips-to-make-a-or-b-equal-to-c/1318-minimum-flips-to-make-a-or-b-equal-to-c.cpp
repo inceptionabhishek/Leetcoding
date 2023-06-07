@@ -18,20 +18,14 @@ public:
         string a1=decToBinary(a);
         string a2=decToBinary(b);
         string a3=decToBinary(c);
-        cout << a1 << endl;
-        cout << a2 << endl;
-        cout << a3 << endl;
         int cnt=0;
         for(int i=0;i<=31;i++){
             if(a3[i]=='1'){
-                cout << a1[i] << ' ' << a2[i] << endl;
                 if(a1[i]=='0' && a2[i]=='0'){
                     cnt++;
                 }
             }else{
-                
                 if(a1[i]=='1' && a2[i]=='1'){
-                    cout << "dd" << endl;
                     cnt+=2;
                 }else if(a1[i]=='1' || a2[i]=='1'){
                     cnt+=1;
