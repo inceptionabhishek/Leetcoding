@@ -6,9 +6,7 @@ public:
             int l=0,r=grid[i].size()-1;
             reverse(grid[i].begin(),grid[i].end());
             int lastpos=-1;
-            cout << i << endl;
             while(l<=r){
-                cout << l << ' ' << r << endl;
                 int mid = (l+r)/2;
                 if(grid[i][mid] >= 0){
                     r = mid - 1;
