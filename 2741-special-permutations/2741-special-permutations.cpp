@@ -3,13 +3,8 @@ public:
     int dp[15][17000];
     int mod=1000000007;
     int rec(int previndex,vector<int>&nums,int mask){
-        bool ok=0;
-        for(int i=0;i<nums.size();i++){
-            if(!(mask&(1<<i))){
-                ok=1;
-            }
-        }
-        if(!ok){
+        int n=nums.size();
+        if(mask == (1<<n)-1){
             return 1;
         }
         if(dp[previndex][mask]!=-1){
