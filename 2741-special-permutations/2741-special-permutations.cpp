@@ -3,7 +3,6 @@ public:
     int dp[15][17000];
     int mod=1000000007;
     int rec(int previndex,vector<int>&nums,int mask){
-        //cout << previndex << ' ' << mask << endl;
         bool ok=0;
         for(int i=0;i<nums.size();i++){
             if(!(mask&(1<<i))){
@@ -23,7 +22,6 @@ public:
                     int newmask=mask;
                     newmask |= (1<<i);
                     int curr = rec(i,nums,newmask)%mod;
-                    //cout << "curr : " <<curr << endl;
                     ans = (ans+curr)%mod;
                     ans = ans % mod;
                 }
