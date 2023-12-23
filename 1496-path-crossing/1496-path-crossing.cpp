@@ -5,7 +5,7 @@ public:
         set<pair<int,int>>s;
         s.insert({i,j});
         for(int k=0;k<path.length();k++){
-            cout << i << ' ' << j << endl;
+            // cout << i << ' ' << j << endl;
             if(path[k]=='N'){
                 i--;
             }
