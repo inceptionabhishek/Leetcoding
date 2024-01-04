@@ -1,7 +1,7 @@
 class Solution {
 public:
     int minOperations(vector<int>& nums) {
-        unordered_map<int,int>ms;
+        vector<int>ms(1e6+1,0);
         for(auto j:nums){
             ms[j]++;
         }
@@ -16,8 +16,8 @@ public:
         };
         int cnt=0;
         for(auto j:ms){
-            if(j.second == 1) return -1;
-            cnt += find(j.second);
+            if(j == 1) return -1;
+            cnt += find(j);
         }
         return cnt;
     }
